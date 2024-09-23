@@ -1,0 +1,373 @@
+[!]
+
+/* todo: break this up into a bunch of css files Jamie Wong style to make this project more maintainable and faster-loading */
+
+[#config.stx]
+
+@font-face {
+    font-family: Ethnocentric;
+    src: url("[^config.baseurl]/res/ethnocentric.otf");
+}
+
+@font-face {
+    font-family: Orbitron;
+    src: url("[^config.baseurl]/res/orbitron/Orbitron-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: Squids;
+    src: url("[^config.baseurl]/res/game_of_squids.otf");
+}
+
+@font-face {
+    font-family: Hand;
+    src: url("[^config.baseurl]/res/fast_hand.otf");
+}
+
+* {
+    font-family: sans-serif;
+    margin: 0px;
+    padding: 0px;
+    text-decoration: inherit;
+}
+
+.ethno {
+    font-family: Ethnocentric;
+}
+
+.scrappy {
+    font-family: Orbitron;
+    white-space: nowrap;
+    color: [^colors.scrappy.orange];
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+#background {
+    --scrolly-top: inherit;
+    background-image: linear-gradient(170deg, purple 400px, transparent 200px, transparent);
+    background-repeat: no-repeat;
+    background-position-y: calc(var(--scrolly-top) * 0.2px - 50px);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: rgb(46, 41, 46);
+}
+
+#header {
+    padding: 20px;
+    color: white;
+    backdrop-filter: blur(20px);
+    background-color: rgba(255, 255, 255, 0.04);
+    position: fixed;
+    width: 100vw;
+    top: 0px;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    box-sizing: border-box;
+}
+
+#header > * {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+#header > *:first-child {
+    margin-right: auto;
+}
+
+.text {
+    color: white;
+    font-size: 1.4em;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.text > div:first-child {
+    width: 30%;
+    height: 3px;
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+.text > div:last-child {
+    width: 30%;
+    height: 3px;
+    margin-left: 70%;
+    background-color: white;
+    margin-top: 20px;
+}
+
+.botpage {
+    background-image: linear-gradient(280deg, rgb(207, 103, 207) 200px, rgba(255, 255, 255, 0) 200px, rgba(255, 255, 255, 0.07) calc(100% - 200px), rgb(207, 103, 207) calc(100% - 200px), rgb(207, 103, 207));
+    display: grid;
+    grid-template-areas: 'a b' 'c c';
+    color: white;
+    padding: 30px;
+    margin: 50px;
+    margin-left: 15vw;
+    padding-left: 10vw;
+    padding-right: 0px;
+    max-width: min(1000px, 100vw);
+    min-width: min-content;
+    background-position: 0px, 0px;
+    transition: background-position 0.2s;
+    text-decoration: none;
+    border: none;
+}
+
+.botpage:hover {
+    background-position: -100px, 0px;
+}
+
+
+.botpage > div:first-child {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.botpage > div > h1 {
+    font-family: Ethnocentric;
+}
+
+
+img.conceptart {
+    width: 25vw;
+    transform: translateX(25%);
+}
+
+.arrow {
+    display: flex;
+    align-items: flex-start;
+}
+
+.arrow > div {
+    width: 50%;
+    height: 2px;
+    background-color: white;
+    margin-top: 7px;
+    transition: width 0.2s;
+}
+
+.botpage:hover>.arrow>div {
+    width: 100%;
+}
+
+#main {
+    position: sticky;
+    top: calc(var(--scrolly-scroll-height) * -1px + 100vh);
+    z-index: 0;
+    height: auto;
+    min-height: 100vh;
+    flex-grow: 1000;
+    margin-top: 200px;
+    padding-bottom: 200px;
+}
+
+#main > h1 {
+    color: [^colors.scrappy.orange];
+    text-align: center;
+    font-family: Ethnocentric;
+    font-size: 5em;
+}
+
+#footer {
+    background-image: linear-gradient(-45deg, rgb(126, 66, 126) 100px, transparent 100px, transparent calc(100% - 100px), rgb(126, 66, 126) calc(100% - 100px));
+    background-color: rgb(41, 37, 41);
+    color: white;
+    position: relative;
+    z-index: 1;
+    padding: 40px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+a:not(:has(> img, > h1)) {
+    background-image: linear-gradient(transparent 50%, [^colors.scrappy.orange] 50%, [^colors.scrappy.orange] 100%);
+    background-size: 100% 200%;
+    background-repeat: no-repeat;
+    background-position-y: 10%;
+    transition: background-position-y 0.2s;
+}
+
+a:not(:has(> img)):hover {
+    background-position-y: 100%;
+}
+
+.donatebutton {
+    color: white;
+    font-family: Ethnocentric;
+    background-image: linear-gradient(rgb(180, 0, 180) 50%, [^colors.scrappy.orange] 50%, [^colors.scrappy.orange] 100%);
+    background-size: 100% 200%;
+    background-repeat: no-repeat;
+    background-color: rgb(180, 0, 180);
+    background-position-y: -1%;
+    transition: background-position-y 0.2s;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.mark {
+    width: 32px;
+}
+
+.tiers {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-evenly;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.tiers > div {
+    padding: 10px;
+    margin: 10px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(30deg, transparent, transparent 80%, purple 80%, purple);
+    background-repeat: no-repeat;
+}
+
+.tiers > div > div:first-child {
+    font-size: 1.5em;
+    font-family: Ethnocentric;
+}
+
+.tiers > div > div:nth-child(2) {
+    text-align: right;
+    font-size: 0.8em;
+}
+
+#tier1sponsors {
+    display: flex;
+    max-width: 1000px;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#tier1sponsors > * {
+    margin: 20px;
+}
+
+#tier1sponsors > a {
+    display: inline-block;
+    width: 200px;
+}
+
+#tier1sponsors > a > img {
+    width: 100%;
+}
+
+#tier2sponsors {
+    display: flex;
+    max-width: 1000px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#tier2sponsors > * {
+    margin: 10px;
+}
+
+#tier2sponsors > a {
+    display: inline-block;
+    width: 100px;
+}
+
+#tier2sponsors > a > img {
+    width: 100%;
+}
+
+#main > h2 {
+    color: white;
+    text-align: center;
+}
+
+.backvideo {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: -2;
+}
+
+.backvideo > video {
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+.backvideo > .flexscreen {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(46, 41, 46, 0.8);
+    backdrop-filter: blur(2px);
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+}
+
+@media (max-width: 1000px) {
+    #main {
+        position: relative;
+        top: 0px;
+    }
+
+    .botpage {
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-right: 30px;
+        padding-left: 10px;
+        background-image: linear-gradient(280deg, rgb(207, 103, 207) 100px, rgba(255, 255, 255, 0) 100px, rgba(255, 255, 255, 0.07) calc(100% - 100px), rgb(207, 103, 207) calc(100% - 100px), rgb(207, 103, 207));
+    }
+
+    .text {
+        font-size: 0.9em;
+    }
+
+    .botpage > div {
+        font-size: 0.7em;
+    }
+
+    #header {
+        font-size: 0.7em;
+    }
+
+    #main > h1 {
+        font-size: 3em;
+    }
+
+    .tiers {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+

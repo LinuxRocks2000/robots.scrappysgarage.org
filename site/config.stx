@@ -1,0 +1,43 @@
+[?]
+
+[=config-]
+    [=baseurl "http://deesh.local:8080"]
+[/]
+
+[i conf/production]
+	[=config.baseurl "https://robots.scrappysgarage.org/"]
+[/]
+
+[=colors-]
+    [=scrappy-]
+        [=orange "#dd7814"]
+    [/]
+[/]
+
+[=bots-]
+    [=+-]
+        [=name "Flibbetygibbet"]
+        [=img "flibbety.png"]
+        [=link "flibbetygibbet.html"]
+        [=blurb-]
+            Flibbetygibbet is a veteran of two Robot Battles events at Dragon Con in the 30lb class. It is a 2 motor and 4 wheel build, and is powered by an electric drill battery and hobby-grade control system.
+        [/]
+    [/]
+    [=+-]
+        [=name "Frankenstein's Roomba"]
+        [=img "frankensteinsroomba.png"]
+        [=link "frankensteinsroomba.html"]
+        [=blurb-]
+            Frankenstein's Roomba is a robot that will compete at Dragon Con in 2025. It is made by the same engineers that built Tough On Babies for 2024, and has similar design goals: it uses
+            electronic ducted fans to produce intense suction, significantly increasing its defensive capabilities as well as making much higher torque configurations viable.
+        [/]
+    [/]
+    [=+-]
+        [=name "The Twins"]
+        [=img "scrappylogo.png"]
+        [=link "#"]
+        [=blurb-]
+            The Twins, Flip and Flop, are our cutest indistinguishable robots. Built along the same design principles, the only way to tell them apart is their characteristic colored bumpers - Flip in blue, Flop in red.
+        [/]
+    [/]
+[/]
