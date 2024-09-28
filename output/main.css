@@ -340,6 +340,29 @@ a:not(:has(> img)):hover {
     height: 100vh;
 }
 
+.image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: monospace;
+    max-width: 1000px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 50px;
+    --c: #dd7814;
+    background-image: linear-gradient(transparent 0px, transparent 49px, var(--c) 49px, var(--c) 51px, transparent 51px, transparent 100px), linear-gradient(90deg, transparent 0px, transparent 49px, var(--c) 49px, var(--c) 51px, transparent 51px, transparent 100px);
+    background-size: 100px 100px;
+}
+
+.image > i {
+    font-family: inherit;
+}
+
 @media (max-width: 1000px) {
     #main {
         position: relative;
