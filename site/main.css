@@ -351,10 +351,12 @@ a:not(:has(> img)):hover {
     padding: 50px;
     --c: [^colors.scrappy.orange];
     background-image: linear-gradient(transparent 0px, transparent 49px, var(--c) 49px, var(--c) 51px, transparent 51px, transparent 100px), linear-gradient(90deg, transparent 0px, transparent 49px, var(--c) 49px, var(--c) 51px, transparent 51px, transparent 100px);
+    background-position: center;
     background-size: 100px 100px;
 }
 
 .image > i {
+    margin-top: 50px;
     font-family: inherit;
 }
 
